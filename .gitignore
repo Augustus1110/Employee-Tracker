@@ -1,3 +1,6 @@
+# Resolves Mac OS issue so that push doesn't hit any bugs
+.DS_Store
+
 # Logs
 logs
 *.log
