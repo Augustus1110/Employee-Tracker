@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const connection = require('./connection'); 
+const { start } = require('repl');
 
 
 
@@ -51,3 +52,41 @@ function startApp() {
         }
       });
   };
+
+
+function viewDepartments() {
+    connection.query('SELECT * FROM department', function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        startApp();
+    });
+};
+
+function viewRoles() {
+    connection.query('SELECT * FROM role', function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        startApp();
+    });
+};
+
+function viewEmployees() {
+    connection.query('SELECT * FROM employee', function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        startApp();
+    });
+};
+
+
+function addDepartment
+
+
+
+
+
+
+
+
+
+startApp();
