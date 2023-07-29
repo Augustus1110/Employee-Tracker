@@ -79,9 +79,37 @@ function viewEmployees() {
 };
 
 
-function addDepartment
+function addDepartment(){
+    inquirer.prompt([
+        {
+            name: "departmentName",
+            type: "input",
+            message: "What is the name of the department?"
+        }
+    ]).then(function(response){
+        connection.query('INSERT INTO department SET ?', {name: response.departmentName}, function(err, res){
+            if (err) throw err;
+            console.log("Department added");
+            startApp();
+        });
+    });
+};
 
-
+function addRole(){
+    inquirer.prompt([
+        {
+            name: "departmentName",
+            type: "input",
+            message: "What is the name of the department?"
+        }
+    ]).then(function(response){
+        connection.query('INSERT INTO department SET ?', {name: response.departmentName}, function(err, res){
+            if (err) throw err;
+            console.log("Department added");
+            startApp();
+        });
+    });
+};
 
 
 
