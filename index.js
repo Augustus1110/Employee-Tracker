@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const connection = require('./connection'); 
 const { start } = require('repl');
 
+// Function that starts the app and prompts the user with a list of actions to choose from.
 function startApp() {
     inquirer.prompt([
       {
@@ -20,6 +21,7 @@ function startApp() {
         ]
       }])
       .then(function (response) {
+        // Switch statement that calls the appropriate function based on the user's choice.
         switch (response.action) {
           case "View all departments":
             viewDepartments();
@@ -49,7 +51,7 @@ function startApp() {
       });
   };
 
-
+// View all departments.
 function viewDepartments() {
     connection.query('SELECT * FROM department', function (err, res) {
         if (err) throw err;
@@ -57,7 +59,7 @@ function viewDepartments() {
         startApp();
     });
 };
-
+// View all roles.
 function viewRoles() {
     connection.query('SELECT * FROM role', function (err, res) {
         if (err) throw err;
@@ -65,7 +67,7 @@ function viewRoles() {
         startApp();
     });
 };
-
+// View all employees.
 function viewEmployees() {
     connection.query('SELECT * FROM employee', function (err, res) {
         if (err) throw err;
@@ -73,7 +75,7 @@ function viewEmployees() {
         startApp();
     });
 };
-
+// Add a new department.
 function addDepartment(){
     inquirer.prompt([
         {
@@ -89,7 +91,7 @@ function addDepartment(){
         });
     });
 };
-
+// Add a new role.
 function addRole(){
   connection.query('SELECT * FROM department', function (err, res) {
 
@@ -119,6 +121,8 @@ function addRole(){
     });
   });
 };
+
+// Add a new employee.
 function addEmployee(){
   connection.query('SELECT * FROM role', function (err, res) {
 
@@ -155,6 +159,7 @@ function addEmployee(){
   });
 };
 
+// Update employee roles.
 function employeeUpdate() {
   connection.query("SELECT * FROM employee", function (err, res) {
     if (err) throw err;
