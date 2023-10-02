@@ -58,9 +58,9 @@ If you have any questions, please contact me:
 - GitHub: [Augustus1110](https://github.com/Augustus1110)
 - Email: donahi22@gmail.com
 
-## License
+### License
 MIT
 (https://opensource.org/licenses/MIT)
 
-## Video Walkthrough
+### Video Walkthrough
 (https://drive.google.com/file/d/1Si_IaKimX9zyX1MNzKnqmEXHQwU88Lui/view)
